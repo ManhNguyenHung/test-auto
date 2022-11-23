@@ -70,7 +70,31 @@ jobs:
       run: |
         zip -r allure-results.zip allure-results
         ls -la
-        
+    
+    - name: Upload allure-results
+      run: |
+        uuid=$(curl --location --request POST 'http://44.211.206.10:8080/api/result'  --form 'allureResults=@allure-results.zip;type=application/zip')
+    
+    - name: Generate allure-results report
+      run: |
+         echo $uuid
+         curl --location --request POST 'http://44.211.206.10:8080/api/report' \
+         --header 'Content-Type: application/json' \
+         --data-raw '{
+           "reportSpec": {
+             "path": [
+               "master",
+               "666"
+             ],
+             "executorInfo": {
+               "buildName": "#666"
+             }
+           },
+           "results": [
+             "'"${uuid}"'"
+           ],
+           "deleteResults": false
+         }'
         
 #     - name: Get Allure history
 #       uses: actions/checkout@v2
