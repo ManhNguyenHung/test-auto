@@ -49,21 +49,22 @@ jobs:
     - name: Test
       run: |
         mvn clean -Dtest=LoginTests test
-    - name: Test Report
-      uses: dorny/test-reporter@v1
-      if: always()
-      with:
-        name: Test Results
-        path: ${{ github.workspace }}/target/surefire-reports/junitreports/*.xml
-        reporter: java-junit
-        java-version: 14
-        fail-on-error: true
-    - name: Upload test result as an artifact
-      if: always()
-      uses: actions/upload-artifact@v1
-      with: 
-        name: test_result
-        path: target/surefire-reports
+      continue-on-error: true
+#     - name: Test Report
+#       uses: dorny/test-reporter@v1
+#       if: always()
+#       with:
+#         name: Test Results
+#         path: ${{ github.workspace }}/target/surefire-reports/junitreports/*.xml
+#         reporter: java-junit
+#         java-version: 14
+#         fail-on-error: true
+#     - name: Upload test result as an artifact
+#       if: always()
+#       uses: actions/upload-artifact@v1
+#       with: 
+#         name: test_result
+#         path: target/surefire-reports
         
     - name: Get Allure history
       uses: actions/checkout@v2
