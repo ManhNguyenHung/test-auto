@@ -48,7 +48,7 @@ jobs:
         mvn --batch-mode -DskipTests package
     - name: Test
       run: |
-        mvn clean -Dtest=Authorization_Register test
+        mvn clean -Dtest=LoginTests test
     - name: Test Report
       uses: dorny/test-reporter@v1
       if: always()
