@@ -71,14 +71,11 @@ jobs:
         zip -r allure-results.zip allure-results
         ls -la
     
-    - name: Upload allure-results
+    - name: Upload and Generate allure-results report
       run: |
         uuid=$(curl --location --request POST 'http://44.211.206.10:8080/api/result'  --form 'allureResults=@allure-results.zip;type=application/zip' | cut -d ":" -f3 | cut -d '"' -f2)
         echo ${uuid}
-    - name: Generate allure-results report
-      run: |
-         echo $uuid
-         curl --location --request POST 'http://44.211.206.10:8080/api/report' \
+        curl --location --request POST 'http://44.211.206.10:8080/api/report' \
          --header 'Content-Type: application/json' \
          --data-raw '{
            "reportSpec": {
