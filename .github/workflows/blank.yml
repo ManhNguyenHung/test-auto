@@ -59,12 +59,12 @@ jobs:
 #         reporter: java-junit
 #         java-version: 14
 #         fail-on-error: true
-#     - name: Upload test result as an artifact
-#       if: always()
-#       uses: actions/upload-artifact@v1
-#       with: 
-#         name: test_result
-#         path: target/surefire-reports
+    - name: Upload test result as an artifact
+      if: always()
+      uses: actions/upload-artifact@v1
+      with: 
+        name: allure-results
+        path: allure-results
         
     - name: Get Allure history
       uses: actions/checkout@v2
