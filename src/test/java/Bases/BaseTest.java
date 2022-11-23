@@ -21,11 +21,12 @@ public class BaseTest {
         PropertiesFile.setPropertiesFile();
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--disable-dev-shm-usage");
         chromeOptions.addArguments("--window-size=1920,1080");
         chromeOptions.setHeadless(true);
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(chromeOptions);
         String url = PropertiesFile.getPropValue("url");
         driver.get(url);
         DriverManager.setDriver(driver);
