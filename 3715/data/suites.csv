@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Nov 23 09:12:53 GMT 2022","Wed Nov 23 09:12:55 GMT 2022","2272","Surefire suite","Surefire test","Testcases.LoginTests","Testcases.LoginTests","LoginPass","LoginPass",""
+"failed","Wed Nov 23 09:12:38 GMT 2022","Wed Nov 23 09:12:48 GMT 2022","10742","Surefire suite","Surefire test","Testcases.LoginTests","Testcases.LoginTests","LoginPass","LoginPass",""
+"failed","Wed Nov 23 09:12:22 GMT 2022","Wed Nov 23 09:12:33 GMT 2022","10829","Surefire suite","Surefire test","Testcases.LoginTests","Testcases.LoginTests","LoginPass","LoginPass",""
+"failed","Wed Nov 23 09:12:07 GMT 2022","Wed Nov 23 09:12:18 GMT 2022","10900","Surefire suite","Surefire test","Testcases.LoginTests","Testcases.LoginTests","LoginPass","LoginPass",""
