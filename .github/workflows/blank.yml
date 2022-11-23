@@ -68,6 +68,7 @@ jobs:
         
     - name: Check allure-results
       run: |
+        zip -r allure-results.zip allure-results
         ls -la
         
         
