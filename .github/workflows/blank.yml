@@ -33,6 +33,31 @@ jobs:
     permissions: write-all
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Send mail
+      uses: dawidd6/action-send-mail@v3
+      with:
+       # Specify connection via URL (replaces server_address, server_port, secure,
+       # username and password)
+       #
+       # Format:
+       #
+       #  * smtp://user:password@server:port
+       #  * smtp+starttls://user:password@server:port
+       connection_url: ${{secrets.GMAIL}}
+       # Required mail server address if not connection_url:
+       server_address: smtp.gmail.com
+       # Server port, default 25:
+       server_port: 465
+       # Optional whether this connection use TLS (default is true if server_port is 465)
+       secure: true
+       # Required mail subject:
+       subject: Github Actions job result
+       # Required recipients' addresses:
+       to: phuongnam8497@gmail.com
+       # Required sender full name (address can be skipped):
+       from: Luke Skywalker # <user@example.com>
+
     - name: Set up JDK 14
       uses: actions/setup-java@v1
       with:
