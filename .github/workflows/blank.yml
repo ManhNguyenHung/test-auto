@@ -6,6 +6,8 @@ name: First Cron Job
 on:
   push: 
     branches: [main]
+  repository_dispatch:
+    types: do-something
 
   # Triggers the workflow every 5 minutes
   # schedule:
