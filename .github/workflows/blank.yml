@@ -31,6 +31,8 @@ jobs:
   html-view:
    runs-on: ubuntu-20.04
    steps:
+   - name: Create HTML
+     run: echo "Hello" > index.html
    - name: HTML Preview
      id: html_preview
      uses: pavi2410/html-preview-action@v2
