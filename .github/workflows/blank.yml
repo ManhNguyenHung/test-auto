@@ -28,7 +28,9 @@ jobs:
   #       run: echo Hello, world!
   #     - name: Check date
   #       run: date
-
+  html-view:
+   runs-on: ubuntu-20.04
+   steps:
    - name: HTML Preview
      id: html_preview
      uses: pavi2410/html-preview-action@v2
